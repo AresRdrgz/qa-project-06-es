@@ -30,7 +30,7 @@ def positive_assert(kit_body):
     assert kit_response.status_code == 201
     # Comprueba que el campo name en el cuerpo coincide con el campo name del cuerpo de la solicitud.
     assert kit_response.json()["name"] == kit_body["name"]
-# Función de prueba nagativa
+# Función de prueba negativa
 def negative_assert(kit_body):
     # El token de autorización se guarda en la variable.
     auth_token = get_user_auth_token()

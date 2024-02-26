@@ -12,9 +12,10 @@ def get_user_auth_token():
     return user_response.json()["authToken"]
 # Función para obtener los headers necesarios.
 def get_headers(auth_token):
-    # Los headers son almacenados en la variable.
-    headers = {"Authorization": "Bearer " + str(auth_token),
-               "Content-Type": "application/json"}
+    # Los headers son almacenados en la variable desde data.py.
+    headers = data.headers.copy()
+    # Se agrega el header de autorización.
+    headers["Authorization"] = "Bearer " + str(auth_token)
     # Se devuelven los headers.
     return headers
 # Función de prueba positiva
@@ -29,6 +30,7 @@ def positive_assert(kit_body):
     assert kit_response.status_code == 201
     # Comprueba que el campo name en el cuerpo coincide con el campo name del cuerpo de la solicitud.
     assert kit_response.json()["name"] == kit_body["name"]
+# Función de prueba nagativa
 def negative_assert(kit_body):
     # El token de autorización se guarda en la variable.
     auth_token = get_user_auth_token()

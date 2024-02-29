@@ -1,5 +1,6 @@
 import sender_stand_request
 import data
+
 # Función para obtener el token de autorización con la creación de un usuario nuevo.
 def get_user_auth_token():
     # El resultado de la solicitud para crear un nuevo usuario o usuaria se guarda en la variable.
@@ -10,6 +11,7 @@ def get_user_auth_token():
     assert user_response.json()["authToken"] != ""
     # Se devuelve el token de autorización.
     return user_response.json()["authToken"]
+
 # Función para obtener los headers necesarios.
 def get_headers(auth_token):
     # Los headers son almacenados en la variable desde data.py.
@@ -18,6 +20,7 @@ def get_headers(auth_token):
     headers["Authorization"] = "Bearer " + str(auth_token)
     # Se devuelven los headers.
     return headers
+
 # Función de prueba positiva
 def positive_assert(kit_body):
     # El token de autorización se guarda en la variable.
@@ -30,6 +33,7 @@ def positive_assert(kit_body):
     assert kit_response.status_code == 201
     # Comprueba que el campo name en el cuerpo coincide con el campo name del cuerpo de la solicitud.
     assert kit_response.json()["name"] == kit_body["name"]
+
 # Función de prueba negativa
 def negative_assert(kit_body):
     # El token de autorización se guarda en la variable.

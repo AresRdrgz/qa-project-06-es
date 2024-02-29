@@ -15,17 +15,14 @@ Para configurar el proyecto, es necesario arrancar el servidor de Urban Grocers 
 
 ## Ejecución
 
-Para poder ejecutar la pruebas es necesario ejecutar las siguientes funciones:
-
-- Prueba 1: test_create_kit_1_letter_long_name_get_success_response()
-- Prueba 2: test_create_kit_511_letters_long_name_get_success_response()
-- Prueba 3: test_create_kit_0_letters_name_get_error_response()
-- Prueba 4: test_create_kit_512_letters_long_name_get_error_response()
-- Prueba 5: test_create_kit_special_symbols_in_name_get_success_response()
-- Prueba 6: test_create_kit_space_in_name_get_success_response()
-- Prueba 7: test_create_kit_numbers_in_name_get_success_response()
-- Prueba 8: test_create_kit_empty_name_get_error_response()
-- Prueba 9: test_create_kit_number_type_name_get_error_response()
+Para poder ejecutar las pruebas, se tiene que seguir los siguientes pasos:
+- Asegurar que pytest esté instalado. Si no es así se puede usar el comando en tu entorno de desarrollo:
+<pre>pip install pytest</pre>
+- Dirigete donde se ubica el archivo create_kit_name_kit_test.py usando el comando:
+<pre>cd 'dirección del proycto'</pre>
+- Usa el siguiente comando para poder ejecutar las pruebas:
+<pre>pytest create_kit_name_kit_test.py</pre>
+- En la terminal, se debe de mostrar la información del progreso de las pruebas.
 
 ## Tecnologías
 
